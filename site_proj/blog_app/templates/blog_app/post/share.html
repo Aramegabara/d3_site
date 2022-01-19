@@ -6,7 +6,7 @@
 
 {% block content %}
     {% if sent %}
-        <h1>Eiadomosc e-mail zostala wyslana</h1>
+        <h1>Wiadomosc e-mail zostala wyslana</h1>
         <p>
             Wyslanie posta "{{ post.title }}" do {{ form.cleanet_date.to }} zakoncylo sie sukcrsrm.
         </p>
@@ -16,12 +16,12 @@
             {{ form.as_p }} <!--? formularz /as_ul()/as_table() -->
             
             <br>
-            {% for field in form %} <!--? iterowanie -->
+    <!--         {% for field in form %} <!--? iterowanie 
                 <div>
                     {{ field.errors }}
                     {{ fields.label_tag }}  {{ field }}
                 </div>
-            {% endfor %}
+            {% endfor %} -->
 
             {% csrf_token %} <!--? to samo <input type='hiden' name='csrmiddlewareatoken', value='26JjKo21cEtYkGoV9z4XmJIEHLXN5LDR' /> -->
             <input type="submit" value="Wyslij wiadomosc e-mail">
