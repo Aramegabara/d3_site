@@ -123,4 +123,17 @@ STATIC_URL = '/static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #? dodaje djangowy mail bez serwera SMTP 
+EMAIL_HOST = 'smtp.gmail.com'
+
+try:
+    from local_settings import *
+except ModuleNotFoundError:
+    print('Chek your local_settings.py !!!')
+
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+

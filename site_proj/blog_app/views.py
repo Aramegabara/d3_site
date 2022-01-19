@@ -1,7 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from forms import EmailPostForm
 from .models import Post
 from django.views.generic import ListView
+from forms import  EmailPostForm
+from django.core.mail import send_mail
 
 #! ViewsList method
 class PostListView(ListView):
@@ -32,3 +35,20 @@ def post_detail(request, year, month, day, post):  #* args, kwargs ???
                                 publish__day=day)
     return render(request, 'blog_app/post/detail.html', {'post': post})
 
+def post_share(request, post_id):
+    post = get_object_or_404(Post, id=post_id, status='published')
+    send = False
+        
+    if request.method == 'POST':
+        form = EmailPostForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            post_url = request.build_absolute_url(post.get_absolute_url())
+            subject = '{} ({}) zacheca do preczytania "{}"'.format(cd['name'], cd['email'], post.title)
+            massage = 'Przecytaj post "{}" na stronie {}\n\n\tKomentarz dodany przez {}: {}'.format(post.title, post_url, cd['name'], cd['commrnts'])
+            send_mail(subject, message, 'aramegabara@gmail.com', [cd['to']])
+            sent = True
+    else:
+        form = EmailPostForm()
+    return render(request, 'blog_app/post/share.html', {'post': post, 'form': form, 'sent': sent})
+    

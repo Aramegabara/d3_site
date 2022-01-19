@@ -1,0 +1,29 @@
+{% extends "blog_app/base.html" %}
+
+{% block title %}
+    Udostepnij Post
+{% endblock %}
+
+{% block content %}
+    {% if sent %}
+        <h1>Eiadomosc e-mail zostala wyslana</h1>
+        <p>
+            Wyslanie posta "{{ post.title }}" do {{ form.cleanet_date.to }} zakoncylo sie sukcrsrm.
+        </p>
+    {% else %}
+        <h1> Udostepnij "{{ post.title }}" przez e-mail</h1>
+        <form action="." method="post">
+            {{ form.as_p }} <!--? formularz /as_ul()/as_table() -->
+            
+            {% for field in form %}
+                <div>
+                    {{ field.errors }}
+                    {{ fields.label_tag }}  {{ field }}
+                </div>
+            {% endfor %}
+
+            {% csrf_token %} <!--? to samo <input type='hiden' name='csrmiddlewareatoken', value='26JjKo21cEtYkGoV9z4XmJIEHLXN5LDR' /> -->
+            <input type="submit" value="Wyslij wiadomosc e-mail">
+        </form>
+    {% endif %}
+{% endblock %}
