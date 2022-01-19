@@ -1,0 +1,184 @@
+[
+    {
+        "model": "blog_app.post",
+        "pk": 1,
+        "fields": {
+            "title": "About site",
+            "slug": "about-site",
+            "author": 1,
+            "body": "On this site you can find many interesting information",
+            "publish": "2022-01-19T14:09:24Z",
+            "created": "2022-01-19T14:11:03.629Z",
+            "updated": "2022-01-19T14:11:03.629Z",
+            "status": "published"
+        }
+    },
+    {
+        "model": "blog_app.post",
+        "pk": 2,
+        "fields": {
+            "title": "Django",
+            "slug": "django",
+            "author": 1,
+            "body": "Django makes it easier to build better web apps more quickly and with less code.",
+            "publish": "2022-01-19T14:11:07Z",
+            "created": "2022-01-19T14:11:52.866Z",
+            "updated": "2022-01-19T14:11:52.866Z",
+            "status": "published"
+        }
+    },
+    {
+        "model": "blog_app.post",
+        "pk": 3,
+        "fields": {
+            "title": "Python",
+            "slug": "python",
+            "author": 1,
+            "body": "Python is powerful... and fast;\r\nplays well with others;\r\nruns everywhere;\r\nis friendly & easy to learn;\r\nis Open.",
+            "publish": "2022-01-19T14:12:31Z",
+            "created": "2022-01-19T14:12:43.973Z",
+            "updated": "2022-01-19T14:12:43.973Z",
+            "status": "published"
+        }
+    },
+    {
+        "model": "blog_app.post",
+        "pk": 4,
+        "fields": {
+            "title": "GNU bash",
+            "slug": "gnu-bash",
+            "author": 1,
+            "body": "Bash is the GNU Project's shell�the Bourne Again SHell. This is an sh-compatible shell that incorporates useful features from the Korn shell (ksh) and the C shell (csh). It is intended to conform to the IEEE POSIX P1003.2/ISO 9945.2 Shell and Tools standard. It offers functional improvements over sh for both programming and interactive use. In addition, most sh scripts can be run by Bash without modification.",
+            "publish": "2022-01-19T14:13:14Z",
+            "created": "2022-01-19T14:13:27.434Z",
+            "updated": "2022-01-19T14:13:27.434Z",
+            "status": "published"
+        }
+    },
+    {
+        "model": "blog_app.post",
+        "pk": 5,
+        "fields": {
+            "title": "JavaScript",
+            "slug": "javascript",
+            "author": 1,
+            "body": "What is JavaScript ? JavaScript is a dynamic computer programming language. It is lightweight and most commonly used as a part of web pages, whose implementations allow client-side script to interact with the user and make dynamic pages. It is an interpreted programming language with object-oriented capabilities.",
+            "publish": "2022-01-19T14:15:03Z",
+            "created": "2022-01-19T14:15:32.733Z",
+            "updated": "2022-01-19T14:15:32.733Z",
+            "status": "published"
+        }
+    },
+    {
+        "model": "blog_app.post",
+        "pk": 6,
+        "fields": {
+            "title": "C",
+            "slug": "c",
+            "author": 1,
+            "body": "C++ is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or \"C with Classes\". The language has expanded significantly over time, and modern C++ now has object-oriented, generic, and functional features in addition to facilities for low-level memory manipulation. It is almost always implemented as a compiled language, and many vendors provide C++ compilers, including the Free Software Foundation, LLVM, Microsoft, Intel, Oracle, and IBM, so it is available on many platforms.",
+            "publish": "2022-01-19T14:16:03Z",
+            "created": "2022-01-19T14:16:13.010Z",
+            "updated": "2022-01-19T14:39:39.814Z",
+            "status": "published"
+        }
+    },
+    {
+        "model": "blog_app.post",
+        "pk": 7,
+        "fields": {
+            "title": "Perl",
+            "slug": "perl",
+            "author": 1,
+            "body": "Perl is a family of script programming languages that is similar in syntax to the C language. It is an older, open source, general use, interpreted language. Perl was developed with usability in mind. Its efficient design lets developers do a lot with a little bit of code.",
+            "publish": "2022-01-19T14:16:34Z",
+            "created": "2022-01-19T14:16:43.199Z",
+            "updated": "2022-01-19T14:16:43.199Z",
+            "status": "published"
+        }
+    },
+    {
+        "model": "blog_app.post",
+        "pk": 8,
+        "fields": {
+            "title": "HTML",
+            "slug": "html",
+            "author": 1,
+            "body": "The HyperText Markup Language, or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript. ... HTML elements are the building blocks of HTML pages.",
+            "publish": "2022-01-19T14:17:08Z",
+            "created": "2022-01-19T14:17:18.123Z",
+            "updated": "2022-01-19T14:17:18.123Z",
+            "status": "published"
+        }
+    },
+    {
+        "model": "blog_app.post",
+        "pk": 9,
+        "fields": {
+            "title": "CSS",
+            "slug": "css",
+            "author": 1,
+            "body": "CSS is the language we use to style a Web page.",
+            "publish": "2022-01-19T14:17:50Z",
+            "created": "2022-01-19T14:17:59.118Z",
+            "updated": "2022-01-19T14:17:59.118Z",
+            "status": "published"
+        }
+    },
+    {
+        "model": "blog_app.post",
+        "pk": 10,
+        "fields": {
+            "title": "SQL",
+            "slug": "sql",
+            "author": 1,
+            "body": "SQL is Structured Query Language, which is a computer language for storing, manipulating and retrieving data stored in a relational database. ... All the Relational Database Management Systems (RDMS) like MySQL, MS Access, Oracle, Sybase, Informix, Postgres and SQL Server use SQL as their standard database language.",
+            "publish": "2022-01-19T14:18:24Z",
+            "created": "2022-01-19T14:18:34.683Z",
+            "updated": "2022-01-19T14:18:34.683Z",
+            "status": "published"
+        }
+    },
+    {
+        "model": "blog_app.post",
+        "pk": 11,
+        "fields": {
+            "title": "ECMAScript",
+            "slug": "ecmascript",
+            "author": 1,
+            "body": "ECMAScript is a JavaScript standard meant to ensure the interoperability of web pages across different web browsers. It is standardised by Ecma International according to the document ECMA-262.",
+            "publish": "2022-01-19T14:19:21Z",
+            "created": "2022-01-19T14:20:30.678Z",
+            "updated": "2022-01-19T14:40:58.723Z",
+            "status": "published"
+        }
+    },
+    {
+        "model": "blog_app.post",
+        "pk": 12,
+        "fields": {
+            "title": "JSON",
+            "slug": "json",
+            "author": 1,
+            "body": "JSON (JavaScript Object Notation, pronounced is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute�value pairs and arrays (or other serializable values).",
+            "publish": "2022-01-19T14:22:51Z",
+            "created": "2022-01-19T14:23:03.838Z",
+            "updated": "2022-01-19T14:41:33.082Z",
+            "status": "published"
+        }
+    },
+    {
+        "model": "blog_app.post",
+        "pk": 13,
+        "fields": {
+            "title": "Linux",
+            "slug": "linux",
+            "author": 1,
+            "body": "Linux� is an open source operating system (OS). An operating system is the software that directly manages a system's hardware and resources, like CPU, memory, and storage. The OS sits between applications and hardware and makes the connections between all of your software and the physical resources that do the work.",
+            "publish": "2022-01-19T14:23:43Z",
+            "created": "2022-01-19T14:24:07.320Z",
+            "updated": "2022-01-19T14:24:07.320Z",
+            "status": "published"
+        }
+    }
+]
