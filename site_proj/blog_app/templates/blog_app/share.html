@@ -15,7 +15,8 @@
         <form action="." method="post">
             {{ form.as_p }} <!--? formularz /as_ul()/as_table() -->
             
-            {% for field in form %}
+            <br>
+            {% for field in form %} <!--? iterowanie -->
                 <div>
                     {{ field.errors }}
                     {{ fields.label_tag }}  {{ field }}
