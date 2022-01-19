@@ -1,0 +1,27 @@
+{% extends "blog_app/base.html" %}
+
+{% block title %} Moj blog {% endblock %}
+
+{% block content %}
+
+<h1>Moj blog</h1>
+
+    {% for post in posts %}
+        <h2>
+            <a href="{{ post.get_absolute_url }}" class="">
+            {{ post.title|upper }}
+            </a>
+        </h2>
+        <p class="data">
+            Opublikowany {{ post.publish }} przez {{ post.author }}
+        </p>
+        {{ post.body|truncatewords:30|linebreaks}}
+    {% endfor %}
+
+    {% include "blog_app/pagination.html" with page=posts %} <!--? nowy sposob include -->
+        
+    {% include "blog_app/pagination.html" with page=page_obj %} <!--! ViewsList method --> 
+
+{% endblock %}
+<hr>
+<br>
