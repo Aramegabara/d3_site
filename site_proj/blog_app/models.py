@@ -9,7 +9,7 @@ class PublishedManager(models.Manager):
     def get_queryset(self):
         return super(PublishedManager, self).get_queryset().filter(status='published')
 
-#! model poatu
+#! model posta
 class Post(models.Model):
     STATUS_CHOICE = (
         ('draft', 'Draft'),
@@ -41,6 +41,29 @@ class Post(models.Model):
                                 self.publish.strftime('%m'),
                                 self.publish.strftime('%d'),
                                 self.slug])
+
+#! model comment
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    name = models.CharField(max_length = 150)
+    email = models.EmailField()
+    body = models.TextField()
+    created = models.DateField(auto_now_add=True)
+    update = models.DateField(auto_now=True)
+    active = models.BooleanField(deault=True)
+
+    class Meta:
+        ordering = ('created',)
+
+    def __str__(self):
+        return 'Komentarz dodany przz {} dla posta {} '.format(self.name, self.post)
+    
+    
+    
+    
+    
+    
+    
 
 
 
