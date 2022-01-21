@@ -132,7 +132,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 try:
     from local_settings import *
 except ModuleNotFoundError:
-    print('Chek your local_settings.py !!!')
+    pass
 
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True

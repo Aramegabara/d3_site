@@ -50,20 +50,10 @@ class Comment(models.Model):
     body = models.TextField()
     created = models.DateField(auto_now_add=True)
     update = models.DateField(auto_now=True)
-    active = models.BooleanField(deault=True)
+    active = models.BooleanField(default=True)
 
     class Meta:
         ordering = ('created',)
 
     def __str__(self):
         return 'Komentarz dodany przz {} dla posta {} '.format(self.name, self.post)
-    
-    
-    
-    
-    
-    
-    
-
-
-
