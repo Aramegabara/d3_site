@@ -5,6 +5,7 @@ from .models import Post, Comment
 from django.views.generic import ListView
 from django.core.mail import send_mail
 from taggit.models import Tag
+from django.db.models import Count
 
 #! ViewsList method
 class PostListView(ListView):
@@ -49,6 +50,9 @@ def post_detail(request, year, month, day, post):  #* args, kwargs ???
             new_comment.save()
     else:
         comment_form = CommentForm()
+    post_tags_ids = post.tags.values_list('id', flat=True)
+    similar_posts = Post.published.filter(tags__in=post_tags_ids).exclude(id=post_id)
+    similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags', '-publish')[:4]
     return render(request, 'blog_app/post/detail.html', {'post': post, 'comments': comments, 'comment_form': comment_form})
 
 
