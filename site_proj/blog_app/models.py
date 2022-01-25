@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse #? pozwala utworzyc url na podstawie nazwy
+from taggit.managers import TaggableManager
 
 
 #! Dodaje wlasnego menegera jak Class.< objects >.all()
@@ -26,6 +27,8 @@ class Post(models.Model):
     #! self manager in shell
     objects = models.Manager()  # Domyslny meneger
     published = PublishedManager()  # Wlasny manager
+    #! tags
+    tags = TaggableManager()
 
     class Meta:
         ordering = ('-publish',)
@@ -57,3 +60,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Komentarz dodany przz {} dla posta {} '.format(self.name, self.post)
+

@@ -4,6 +4,7 @@ from .forms import EmailPostForm, CommentForm
 from .models import Post, Comment
 from django.views.generic import ListView
 from django.core.mail import send_mail
+from taggit.models import Tag
 
 #! ViewsList method
 class PostListView(ListView):
@@ -12,11 +13,16 @@ class PostListView(ListView):
     paginate_by = 2
     template_name = 'blog_app/post/list.html'
 
-def post_list(request):
+def post_list(request, tag_slug=None):
     # posts = Post.published.all() 
     #! pagination
     object_list = Post.published.all()
-    paginator = Paginator(object_list, 2)
+    tag = None
+    #! tags
+    if tag_slug:
+        tag = get_object_or_404(Tag, slug=tag_slug)
+        object_list = object_list.filter(tags__in=[tag])
+    paginator = Paginator(object_list, 4)
     page = request.GET.get('num_page') #? num_page in html
     try:
         posts = paginator.page(page)
@@ -24,7 +30,7 @@ def post_list(request):
         posts = paginator.page(1) #? jaka strona bedzie wyswietliac pierwsza
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
-    return render(request, 'blog_app/post/list.html',{'page': page, 'posts': posts})
+    return render(request, 'blog_app/post/list.html',{'page': page, 'posts': posts, 'tag': tag})
 
 def post_detail(request, year, month, day, post):  #* args, kwargs ???
     post = get_object_or_404(Post, slug=post, 
